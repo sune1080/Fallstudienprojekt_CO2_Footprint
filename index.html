@@ -86,13 +86,24 @@
             </li>
           </ul>
 
-          <form class="d-flex" role="search">
+          <form
+            id="searchForm"
+            class="d-flex position-relative"
+            role="search"
+            aria-label="Suchformular"
+          >
+            <!-- Suche mit Maximallänge -->
             <input
+              id="searchInput"
               class="form-control me-2"
               type="search"
               placeholder="Suchbegriff eingeben"
+              aria-label="Suchbegriff"
+              maxlength="30"
             />
-            <button class="btn btn-outline-black" type="submit">Suchen</button>
+            <button id="searchBtn" class="btn btn-outline-black" type="submit">
+              Suchen
+            </button>
           </form>
         </div>
       </div>
@@ -101,7 +112,7 @@
     <!-- HAUPTBEREICH -->
     <main class="flex-fill container mt-4">
       <div class="row main-layout">
-            <!-- LOKALES SEITENMENÜ -->
+        <!-- LOKALES SEITENMENÜ -->
         <nav class="col-md-2 local-menu">
           <h5>Seitenmenü</h5>
           <ul class="list-unstyled">
@@ -443,6 +454,30 @@
       $(document).ready(function () {
         $("#myTable").DataTable();
       });
+      $(document).ready(function () {
+        $("#myTable").DataTable();
+      });
     </script>
+    <!-- Toast: Such-Funktion noch nicht verfügbar -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080">
+      <div
+        id="searchToast"
+        class="toast align-items-center text-bg-warning border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Diese Funktion ist noch nicht verfügbar.</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Schließen"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="search-toast.js"></script>
   </body>
 </html>
