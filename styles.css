@@ -10,8 +10,9 @@
 
 .btn-outline-black:focus, 
 .btn-outline-black:active {
-  box-shadow: none !important; /* optional */
+  box-shadow: none !important;
 }
+
 /* --- Layout für Hauptbereich --- */
 .main-layout {
   display: flex;
@@ -43,6 +44,6 @@ html[dir="rtl"] .page-content {
 html[dir="rtl"] .local-menu {
   border-right: none;
   border-left: 1px solid #ddd;
-  padding-left: rem;
+  padding-left: 1rem;
   padding-right: 0;
 }
