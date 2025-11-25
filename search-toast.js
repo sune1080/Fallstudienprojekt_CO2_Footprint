@@ -1,6 +1,3 @@
-// Diese Datei zeigt bei Submit einen Bootstrap-Toast und verhindert XSS im Frontend.
-// keine Verwendung von innerHTML mit User-Input!
-
 document.addEventListener('DOMContentLoaded', function () {
   // Fallback: falls bootstrap nicht vorhanden ist, nichts tun
   if (typeof bootstrap === 'undefined') return;
@@ -15,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Seite nicht neuladen
 
-    // Client-seitige Sanitization (nur Komfort; serverseitig validieren!)
+    // Client-seitige Sanitization
     let q = input.value || '';
     q = q.trim().slice(0, 200); // Länge begrenzen
 
